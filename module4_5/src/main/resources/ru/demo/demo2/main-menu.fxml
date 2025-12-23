@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.demo.demo2.controller.MainMenuController">
+    <BorderPane fx:id="mainContainer">
+        <top>
+            <HBox style="-fx-background-color: #2E7D32; -fx-padding: 10;">
+                <Button fx:id="menuButton" onAction="#toggleMenu" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Меню"/>
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 0 0 0 15;" text="Экоцентр: приём и переработка вторсырья"/>
+            </HBox>
+        </top>
+    </BorderPane>
+
+    <VBox fx:id="drawer" managed="false" maxWidth="200" prefWidth="200" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 0 1 0 0;" translateX="-200" StackPane.alignment="CENTER_LEFT">
+        <HBox style="-fx-background-color: #E8F5E9; -fx-padding: 10;">
+            <Label style="-fx-text-fill: #1B5E20; -fx-font-weight: bold;" text="Навигация" HBox.hgrow="ALWAYS"/>
+            <Button onAction="#toggleMenu" style="-fx-background-color: transparent;" text="X"/>
+        </HBox>
+        
+        <Button onAction="#onSuppliersClick" prefWidth="200" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 12;" text="Поставщики"/>
+        <Button onAction="#onWasteTypesClick" prefWidth="200" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 12;" text="Виды вторсырья"/>
+        <Button onAction="#onReceiptsClick" prefWidth="200" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 12;" text="Приёмки"/>
+        <Button onAction="#onStorageClick" prefWidth="200" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 12;" text="Склад"/>
+        <Button onAction="#onProcessingClick" prefWidth="200" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 12;" text="Переработка"/>
+        <Button onAction="#onShipmentsClick" prefWidth="200" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 12;" text="Отгрузки"/>
+        <Button onAction="#onStatisticsClick" prefWidth="200" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 12;" text="Статистика"/>
+        <Button onAction="#onAuditLogClick" prefWidth="200" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 12;" text="Журнал"/>
+    </VBox>
+</StackPane>
+

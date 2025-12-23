@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.demo.demo2.controller.AuditLogController">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Журнал операций (аудит)"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Период:"/>
+        <DatePicker fx:id="dpFrom" prefWidth="130"/>
+        <Label text="—"/>
+        <DatePicker fx:id="dpTo" prefWidth="130"/>
+        <Label text="Поиск:"/>
+        <TextField fx:id="tfSearch" prefWidth="200" promptText="Пользователь, действие, сущность"/>
+        <Button text="Обновить" onAction="#onRefresh" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Сбросить фильтр" onAction="#onClearFilter"/>
+    </HBox>
+    
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colTimestamp" text="Дата/время" prefWidth="150"/>
+            <TableColumn fx:id="colUser" text="Пользователь" prefWidth="120"/>
+            <TableColumn fx:id="colAction" text="Действие" prefWidth="100"/>
+            <TableColumn fx:id="colEntityType" text="Сущность" prefWidth="120"/>
+            <TableColumn fx:id="colEntityId" text="ID сущн." prefWidth="80"/>
+            <TableColumn fx:id="colOldValue" text="Старое значение" prefWidth="200"/>
+            <TableColumn fx:id="colNewValue" text="Новое значение" prefWidth="200"/>
+        </columns>
+    </TableView>
+</VBox>

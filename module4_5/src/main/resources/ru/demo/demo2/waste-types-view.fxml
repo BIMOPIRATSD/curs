@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.demo.demo2.controller.WasteTypesController">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Виды вторсырья"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Поиск:"/>
+        <TextField fx:id="tfSearch" prefWidth="300" promptText="Введите название"/>
+    </HBox>
+    
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colName" text="Название" prefWidth="250"/>
+            <TableColumn fx:id="colDensity" text="Плотность (кг/м³)" prefWidth="150"/>
+            <TableColumn fx:id="colRecyclable" text="Перерабатывается" prefWidth="150"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" style="-fx-background-color: #f5f5f5; -fx-padding: 10; -fx-border-radius: 5;">
+        <VBox spacing="5">
+            <Label text="Название:"/>
+            <TextField fx:id="tfName" prefWidth="200"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Плотность (кг/м³):"/>
+            <TextField fx:id="tfDensity" prefWidth="150"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text=""/>
+            <CheckBox fx:id="cbRecyclable" text="Перерабатывается" selected="true"/>
+        </VBox>
+    </HBox>
+    
+    <HBox spacing="10">
+        <Button text="Добавить" onAction="#onAdd" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Изменить" onAction="#onUpdate" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        <Button text="Удалить" onAction="#onDelete" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        <Button text="Очистить" onAction="#onClear"/>
+    </HBox>
+</VBox>

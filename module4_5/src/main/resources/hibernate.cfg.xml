@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Set URL -->
+        <property name = "hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <!-- Set User Name -->
+        <property name = "hibernate.connection.username">postgres</property>
+        <!-- Set Password -->
+        <property name = "hibernate.connection.password">root</property>
+        <!-- Set Driver Name -->
+        <property name = "hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name = "hibernate.show_sql">false</property>
+        <!-- Optional: Auto-generate schema -->
+        <!-- <property name = "hibernate.hbm2ddl.auto">create</property> -->
+        <mapping class="ru.demo.demo2.model.User" />
+        <mapping class="ru.demo.demo2.model.Supplier" />
+        <mapping class="ru.demo.demo2.model.WasteType" />
+        <mapping class="ru.demo.demo2.model.Receipt" />
+        <mapping class="ru.demo.demo2.model.StorageCell" />
+        <mapping class="ru.demo.demo2.model.ProcessingStage" />
+        <mapping class="ru.demo.demo2.model.Shipment" />
+        <mapping class="ru.demo.demo2.model.AuditLog" />
+    </session-factory>
+</hibernate-configuration>

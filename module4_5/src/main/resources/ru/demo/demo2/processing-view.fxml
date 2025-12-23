@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.demo.demo2.controller.ProcessingController">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Этапы переработки"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Поиск:"/>
+        <TextField fx:id="tfSearch" prefWidth="300" promptText="Введите этап или статус"/>
+    </HBox>
+    
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colReceipt" text="Партия" prefWidth="250"/>
+            <TableColumn fx:id="colStage" text="Этап" prefWidth="120"/>
+            <TableColumn fx:id="colStartTime" text="Начало" prefWidth="150"/>
+            <TableColumn fx:id="colEndTime" text="Окончание" prefWidth="150"/>
+            <TableColumn fx:id="colStatus" text="Статус" prefWidth="120"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" style="-fx-background-color: #f5f5f5; -fx-padding: 10; -fx-border-radius: 5;">
+        <VBox spacing="5">
+            <Label text="Приёмка:"/>
+            <ComboBox fx:id="cbReceipt" prefWidth="250"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Этап:"/>
+            <ComboBox fx:id="cbStage" prefWidth="150"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Оператор:"/>
+            <ComboBox fx:id="cbOperator" prefWidth="150"/>
+        </VBox>
+    </HBox>
+    
+    <HBox spacing="10">
+        <Button text="Начать этап" onAction="#onStartStage" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Завершить" onAction="#onComplete" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        <Button text="Отменить" onAction="#onCancel" style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+        <Button text="Удалить" onAction="#onDelete" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        <Button text="Очистить" onAction="#onClear"/>
+    </HBox>
+</VBox>
